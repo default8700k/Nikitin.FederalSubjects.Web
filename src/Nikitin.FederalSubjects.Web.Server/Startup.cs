@@ -44,8 +44,15 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "Nikitin.FederalSubjects.Web.Server v1"));
         }
+        else
+        {
+            app.UseHsts();
+        }
 
-        app.Map("/api/external", x =>
+        app.UseBlazorFrameworkFiles();
+        app.UseStaticFiles();
+
+        app.Map("/api", x =>
             x.UseRequestRedirector("External")
         );
 
@@ -56,6 +63,7 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
+            endpoints.MapFallbackToFile("index.html");
 
             endpoints.MapHealthChecks("/health", new HealthCheckOptions
             {

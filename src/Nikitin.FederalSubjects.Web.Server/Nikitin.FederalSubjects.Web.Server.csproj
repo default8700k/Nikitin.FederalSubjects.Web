@@ -13,6 +13,7 @@
     <ItemGroup>
         <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.4" />
         <PackageReference Include="Maltsev.RequestRedirector" Version="1.0.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.6" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.6" />
         <PackageReference Include="NLog" Version="5.0.1" />
         <PackageReference Include="NLog.Targets.Seq" Version="2.1.0" />
@@ -24,6 +25,10 @@
 
     <ItemGroup>
         <None Remove="nlog.log" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Nikitin.FederalSubjects.Web.Client\Nikitin.FederalSubjects.Web.Client.csproj" />
     </ItemGroup>
 
 </Project>
