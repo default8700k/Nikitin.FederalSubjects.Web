@@ -7,6 +7,10 @@ nav {
     min-height: 100vh;
 }
 
+nav a.nav-link {
+    border-radius: 0!important;
+}
+
 nav svg.bi {
     fill: currentColor;
     pointer-events: none;

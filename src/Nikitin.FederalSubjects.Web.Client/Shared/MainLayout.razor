@@ -18,8 +18,9 @@
     </symbol>
 </svg>
 
-<nav class="d-flex flex-column bg-light fixed-bottom">
-    <ul class="nav nav-pills flex-column">
+<nav class="d-flex flex-column bg-light navbar-light fixed-bottom border-1 border-end p-3">
+    <div class="border-1 border-bottom lh-sm pb-3 mb-3">Интерактивный ресурс «Региональная география России»</div>
+    <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
             <NavLink class="nav-link link-dark" href="/" Match="NavLinkMatch.All">
                 <svg class="bi">
@@ -61,6 +62,14 @@
             </NavLink>
         </li>
     </ul>
+    <div class="border-1 border-top pt-3">
+        <ul class="list-unstyled small mb-0">
+            <li>© Разработка. Мальцев В.Л., 2022</li>
+            <li>© Наполнение. Никитин Д.Е., 2022</li>
+        </ul>
+    </div>
 </nav>
 
-@Body
+<main role="main">
+    @Body
+</main>
