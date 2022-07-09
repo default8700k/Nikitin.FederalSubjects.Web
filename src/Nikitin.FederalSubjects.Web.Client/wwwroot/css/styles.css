@@ -1,3 +1,20 @@
 ﻿body {
     font-family: 'Exo 2', sans-serif;
 }
+
+nav {
+    width: 300px;
+    min-height: 100vh;
+}
+
+nav svg.bi {
+    fill: currentColor;
+    pointer-events: none;
+    vertical-align: -0.25rem;
+}
+
+nav svg.bi {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}

@@ -1,3 +1,66 @@
 ﻿@inherits LayoutComponentBase
 
+<svg class="d-none">
+    <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" />
+    </symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24">
+        <path d="M14.65 4.98l-5-1.75c-.42-.15-.88-.15-1.3-.01L4.36 4.56C3.55 4.84 3 5.6 3 6.46v11.85c0 1.41 1.41 2.37 2.72 1.86l2.93-1.14c.22-.09.47-.09.69-.01l5 1.75c.42.15.88.15 1.3.01l3.99-1.34c.81-.27 1.36-1.04 1.36-1.9V5.69c0-1.41-1.41-2.37-2.72-1.86l-2.93 1.14c-.22.08-.46.09-.69.01zM15 18.89l-6-2.11V5.11l6 2.11v11.67z" />
+    </symbol>
+    <symbol id="icon-library" viewBox="0 0 24 24">
+        <path d="M3 6c-.55 0-1 .45-1 1v13c0 1.1.9 2 2 2h13c.55 0 1-.45 1-1s-.45-1-1-1H5c-.55 0-1-.45-1-1V7c0-.55-.45-1-1-1zm17-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 9h-8c-.55 0-1-.45-1-1s.45-1 1-1h8c.55 0 1 .45 1 1s-.45 1-1 1zm-4 4h-4c-.55 0-1-.45-1-1s.45-1 1-1h4c.55 0 1 .45 1 1s-.45 1-1 1zm4-8h-8c-.55 0-1-.45-1-1s.45-1 1-1h8c.55 0 1 .45 1 1s-.45 1-1 1z" />
+    </symbol>
+    <symbol id="icon-feedback" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25l-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25c-.25-.16-.4-.43-.4-.72 0-.67.73-1.07 1.3-.72L12 11l6.7-4.19c.57-.35 1.3.05 1.3.72 0 .29-.15.56-.4.72z" />
+    </symbol>
+    <symbol id="icon-about" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1-8h-2V7h2v2z" />
+    </symbol>
+</svg>
+
+<nav class="d-flex flex-column bg-light fixed-bottom">
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <NavLink class="nav-link link-dark" href="/" Match="NavLinkMatch.All">
+                <svg class="bi">
+                    <use xlink:href="#icon-home" />
+                </svg>
+                <span>Главная</span>
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink class="nav-link link-dark" href="/map">
+                <svg class="bi">
+                    <use xlink:href="#icon-map" />
+                </svg>
+                <span>Карта России</span>
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink class="nav-link link-dark" href="/library">
+                <svg class="bi">
+                    <use xlink:href="#icon-library" />
+                </svg>
+                <span>Справочник</span>
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink class="nav-link link-dark" href="/feedback">
+                <svg class="bi">
+                    <use xlink:href="#icon-feedback" />
+                </svg>
+                <span>Обратная связь</span>
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink class="nav-link link-dark" href="/about">
+                <svg class="bi">
+                    <use xlink:href="#icon-about" />
+                </svg>
+                <span>О проекте</span>
+            </NavLink>
+        </li>
+    </ul>
+</nav>
+
 @Body
