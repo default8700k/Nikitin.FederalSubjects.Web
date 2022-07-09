@@ -5,11 +5,11 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09E30721-B27F-48E7-ADD8-7C0E9942C1DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.Web.Shared", "src\Nikitin.FederalSubjects.Web.Shared\Nikitin.FederalSubjects.Web.Shared.csproj", "{1BACD9A5-8FBD-43DA-8B9C-9548260A442A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nikitin.FederalSubjects.Web.Shared", "src\Nikitin.FederalSubjects.Web.Shared\Nikitin.FederalSubjects.Web.Shared.csproj", "{1BACD9A5-8FBD-43DA-8B9C-9548260A442A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.Web.Server", "src\Nikitin.FederalSubjects.Web.Server\Nikitin.FederalSubjects.Web.Server.csproj", "{543C4D3E-5C95-4500-9EA0-AA7E6D6A4F4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nikitin.FederalSubjects.Web.Server", "src\Nikitin.FederalSubjects.Web.Server\Nikitin.FederalSubjects.Web.Server.csproj", "{543C4D3E-5C95-4500-9EA0-AA7E6D6A4F4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikitin.FederalSubjects.Web.Client", "src\Nikitin.FederalSubjects.Web.Client\Nikitin.FederalSubjects.Web.Client.csproj", "{2EF27465-5355-49CA-A9FF-905BA05B9E85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nikitin.FederalSubjects.Web.Client", "src\Nikitin.FederalSubjects.Web.Client\Nikitin.FederalSubjects.Web.Client.csproj", "{2EF27465-5355-49CA-A9FF-905BA05B9E85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
