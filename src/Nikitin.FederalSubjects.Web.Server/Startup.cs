@@ -1,16 +1,31 @@
 ﻿using HealthChecks.UI.Client;
+using Maltsev.RequestRedirector;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
+using Nikitin.FederalSubjects.Web.Server.Models;
 
 namespace Nikitin.FederalSubjects.Web.Server;
 
 public class Startup
 {
+    private readonly ConfigurationModel _configuration;
+
+    public Startup(IConfiguration configuration)
+    {
+        _configuration = configuration.Get<ConfigurationModel>();
+    }
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.Configure<RouteOptions>(options => { options.LowercaseUrls = true; });
 
         services.AddControllers().AddNewtonsoftJson();
+
+        services.AddHttpClient("External", httpClient =>
+        {
+            httpClient.BaseAddress = new Uri(_configuration.ExternalService.BaseAddress);
+            httpClient.Timeout = _configuration.ExternalService.Timeout;
+        });
 
         services.AddSwaggerGenNewtonsoftSupport();
         services.AddSwaggerGen(x =>
@@ -29,6 +44,10 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "Nikitin.FederalSubjects.Web.Server v1"));
         }
+
+        app.Map("/api/external", x =>
+            x.UseRequestRedirector("External")
+        );
 
         app.UseHttpsRedirection();
         app.UseRouting();

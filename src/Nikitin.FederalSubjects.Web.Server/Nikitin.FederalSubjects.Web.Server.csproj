@@ -12,6 +12,7 @@
 
     <ItemGroup>
         <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.4" />
+        <PackageReference Include="Maltsev.RequestRedirector" Version="1.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.6" />
         <PackageReference Include="NLog" Version="5.0.1" />
         <PackageReference Include="NLog.Targets.Seq" Version="2.1.0" />
@@ -19,6 +20,10 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
         <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.1" />
         <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="nlog.log" />
     </ItemGroup>
 
 </Project>
