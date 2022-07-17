@@ -8,11 +8,11 @@ namespace Nikitin.FederalSubjects.Web.Server;
 
 public class Startup
 {
-    private readonly ConfigurationModel _configuration;
+    private readonly ConfigurationModel _configurationModel;
 
     public Startup(IConfiguration configuration)
     {
-        _configuration = configuration.Get<ConfigurationModel>();
+        _configurationModel = configuration.Get<ConfigurationModel>();
     }
 
     public void ConfigureServices(IServiceCollection services)
@@ -23,8 +23,8 @@ public class Startup
 
         services.AddHttpClient("External", httpClient =>
         {
-            httpClient.BaseAddress = new Uri(_configuration.ExternalService.BaseAddress);
-            httpClient.Timeout = _configuration.ExternalService.Timeout;
+            httpClient.BaseAddress = new Uri(_configurationModel.ExternalService.BaseAddress);
+            httpClient.Timeout = _configurationModel.ExternalService.Timeout;
         });
 
         services.AddSwaggerGenNewtonsoftSupport();
