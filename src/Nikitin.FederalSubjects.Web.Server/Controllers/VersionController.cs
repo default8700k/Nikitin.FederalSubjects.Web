@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net.Mime;
 using System.Reflection;
@@ -11,17 +13,18 @@ namespace Nikitin.FederalSubjects.Web.Server.Controllers;
 public class VersionController : ControllerBase
 {
     [HttpGet]
-    [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(ResponseVersion))]
+    [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(VersionResponse))]
     public IActionResult GetVersion() =>
         new OkObjectResult(
-            new ResponseVersion
+            new VersionResponse
             {
                 Version = Assembly.GetExecutingAssembly().GetName().Version?.ToString()
             }
         );
 }
 
-public record class ResponseVersion
+[JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+public record class VersionResponse
 {
     public string? Version { get; init; }
 }
